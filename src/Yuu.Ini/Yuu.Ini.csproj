@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Yuu.Ini</AssemblyName>
+    <RootNamespace>Yuu.Ini</RootNamespace>
+    <Version>0.1.0</Version>
+    <Description>This is a .NET library to parse INI.</Description>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <LangVersion>9</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RepositoryUrl>https://github.com/yuusakuri/Ini</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageTags>ini, parser, configuration, config</PackageTags>
+    <PackageId>Yuu.Ini</PackageId>
+    <PackageIcon>Ini-nuget-icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\Ini-nuget-icon.png" Pack="true" PackagePath=""/>
+</ItemGroup>
+
+</Project>
