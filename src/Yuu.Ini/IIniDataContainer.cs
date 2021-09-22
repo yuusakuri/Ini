@@ -26,14 +26,6 @@ namespace Yuu.Ini
         /// <summary>
         /// Gets the groups of parameter with duplicate names.
         /// </summary>
-        List<IGrouping<string, IniParameter>> GetDuplicateParameterGroups()
-        {
-            var nodeGroups = this.GetParameters()
-                .GroupBy(aParameter => aParameter.Key)
-                .Where(aGroup => aGroup.Count() > 1)
-                .ToList();
-
-            return nodeGroups;
-        }
+        List<IGrouping<string, IniParameter>> GetDuplicateParameterGroups();
     }
 }

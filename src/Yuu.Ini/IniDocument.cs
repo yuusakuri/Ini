@@ -7,7 +7,7 @@ namespace Yuu.Ini
     /// <summary>
     /// Represents a INI document node.
     /// </summary>
-    public class IniDocument : IniNode, IIniDocument
+    public class IniDocument : IniSectionContainer, IIniDocument
     {
         #region ctor
 
@@ -23,7 +23,7 @@ namespace Yuu.Ini
         #endregion
 
         /// <inheritdoc/>
-        public List<IniSection> GetSections()
+        public override List<IniSection> GetSections()
         {
             var nodes = this.ChildNodes
                 .Select(aSection => (IniSection)aSection)
@@ -33,7 +33,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniSection> GetSections(string name)
+        public override List<IniSection> GetSections(string name)
         {
             var nodes = this.GetSections()
                 .Where(aSection => aSection.Name == name)
@@ -43,7 +43,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniParameter> GetParameters()
+        public override List<IniParameter> GetParameters()
         {
             var nodes = new List<IniParameter>();
             this.GetSections()
@@ -53,7 +53,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniParameter> GetParameters(string key)
+        public override List<IniParameter> GetParameters(string key)
         {
             var nodes = new List<IniParameter>();
             this.GetSections()
@@ -63,7 +63,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniComment> GetComments()
+        public override List<IniComment> GetComments()
         {
             var nodes = new List<IniComment>();
             this.GetSections()
@@ -73,7 +73,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public void AddSection(string name)
+        public override void AddSection(string name)
         {
             var node = new IniSection(name, this.Configuration);
 
@@ -81,7 +81,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public void InsertSection(int index, string name)
+        public override void InsertSection(int index, string name)
         {
             var node = new IniSection(name, this.Configuration);
 
@@ -89,7 +89,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IGrouping<string, IniSection>> GetDuplicateSectionGroups()
+        public override List<IGrouping<string, IniSection>> GetDuplicateSectionGroups()
         {
             var nodeGroups = this.GetSections()
                 .GroupBy(aSection => aSection.Name)
@@ -100,7 +100,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public void MergeDuplicateSections()
+        public override void MergeDuplicateSections()
         {
             var duplicateSectionGroups = this.GetDuplicateSectionGroups();
             foreach (var aGroup in duplicateSectionGroups)

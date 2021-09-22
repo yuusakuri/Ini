@@ -68,8 +68,6 @@ var newIniContents = ini.ToString();
 
 ### PowerShell
 
-Confirmed to work with PSVersion `7.1.4`. Not available in Windows PowerShell.
-
 ```powershell
 # Parse INI contents
 $iniContents = ";ini comment"

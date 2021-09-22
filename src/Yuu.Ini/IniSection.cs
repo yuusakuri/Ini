@@ -7,7 +7,7 @@ namespace Yuu.Ini
     /// <summary>
     /// Represents a INI section node.
     /// </summary>
-    public class IniSection : IniNode, IIniSection
+    public class IniSection : IniDataContainer, IIniSection
     {
         #region Fields
 
@@ -56,7 +56,7 @@ namespace Yuu.Ini
         #region Public Methods
 
         /// <inheritdoc/>
-        public List<IniParameter> GetParameters()
+        public override List<IniParameter> GetParameters()
         {
             var nodes = this.ChildNodes
                 .Where(aNode => aNode.NodeType == IniNodeType.IniParameter)
@@ -67,7 +67,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniParameter> GetParameters(string key)
+        public override List<IniParameter> GetParameters(string key)
         {
             var nodes = this.GetParameters()
                 .Where(aNode => aNode.Key == key)
@@ -77,7 +77,7 @@ namespace Yuu.Ini
         }
 
         /// <inheritdoc/>
-        public List<IniComment> GetComments()
+        public override List<IniComment> GetComments()
         {
             var nodes = this.ChildNodes
                 .Where(aNode => aNode.NodeType == IniNodeType.IniComment)
