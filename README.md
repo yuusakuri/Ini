@@ -8,7 +8,7 @@ This is a .NET library to parse INI.
 - Supports Duplicate sections.
 - Supports Duplicate keys.
 - Keep comments, blank lines and Order of nodes such as comments and parameters.
-- Config can be changed.
+- Configuration can be changed.
 
 ## Installation
 
