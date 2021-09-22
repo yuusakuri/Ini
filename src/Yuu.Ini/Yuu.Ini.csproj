@@ -10,7 +10,7 @@
   <PropertyGroup>
     <AssemblyName>Yuu.Ini</AssemblyName>
     <RootNamespace>Yuu.Ini</RootNamespace>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Description>This is a .NET library to parse INI.</Description>
     <OutputType>Library</OutputType>
     <LangVersion>9</LangVersion>
