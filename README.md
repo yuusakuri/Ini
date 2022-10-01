@@ -1,6 +1,6 @@
 # Yuu.Ini
 
-This is a .NET library to parse INI.
+This is a .NET library to parse [INI File](https://en.wikipedia.org/wiki/INI_file).
 
 - Parse an INI format string and convert it to an object (node).
 - Convert from an node to a string.
